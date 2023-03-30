@@ -9,7 +9,7 @@ import Modal from "./Modal";
 
 
 const  Details = () => {
-    const [showModal, setShowModal] = useState("false");
+    const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
     const [_, setAdoptedPet] = useContext(AdoptedPetContext);
     const { id } = useParams();
@@ -29,7 +29,7 @@ if (results.isLoading) {
       <Carousel images={pet.images} />
       <div>
         <h1>{pet.name}</h1>
-         <h2>{pet.animal} - {pet.breed} - {pet.city}, {pet.state}
+         <h2>{pet.animal} — {pet.breed} — {pet.city}, {pet.state}
           <button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>
            <p>{pet.description}</p>
            {
@@ -38,7 +38,7 @@ if (results.isLoading) {
             <Modal>
               <div>
                 <h1>Would you like to adopt {pet.name}?</h1>
-                <div className="buttons">
+                <div className="buttons"> 
                   <button onClick={() => {
                     setAdoptedPet(pet);
                     navigate("/");
