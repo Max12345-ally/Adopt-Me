@@ -9,7 +9,7 @@ const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"]
 
 const SearchParams = () => {
     const [requestParams, setRequestParams] = useState({
-        locaion: "",
+        location: "",
         animal: "",
         breed: "",
     });
@@ -23,7 +23,7 @@ const SearchParams = () => {
 
     return (
         <div className="search-params">
-            <form onSubmit={e => {
+            <form onSubmit={(e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target);
                 const obj = {
@@ -53,7 +53,6 @@ const SearchParams = () => {
                     onChange={(e) => {
                         setAnimal(e.target.value);
                     }}
-                    
                     >
                         <option />
                         {ANIMALS.map((animal) => (
